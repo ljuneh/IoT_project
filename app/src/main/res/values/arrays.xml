@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="reservation">
+        <item>@color/reservation1</item>
+        <item>@color/reservation2</item>
+        <item>@color/reservation3</item>
+        <item>@color/reservation4</item>
+        <item>@color/reservation5</item>
+        <item>@color/reservation6</item>
+        <item>@color/reservation7</item>
+        <item>@color/reservation8</item>
+        <item>@color/reservation9</item>
+        <item>@color/reservation10</item>
+    </array>
+</resources>

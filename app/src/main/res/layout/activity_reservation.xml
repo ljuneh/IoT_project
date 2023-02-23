@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--최상위 레이아웃. DrawerLayout-->
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+
+    <!--메인 레이아웃-->
+    <include
+        android:id="@+id/app_bar_reservation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/app_bar_reservation" />
+
+    <!--자식 레이아웃. Navigation Drawer-->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/activity_reservation_drawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        app:headerLayout="@layout/nav_header_reservation"
+        app:menu="@menu/activity_reservation_drawer">
+
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>
