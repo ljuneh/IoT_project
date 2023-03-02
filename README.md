@@ -9,6 +9,8 @@
 
 
 1. 일정 추가  
+
+
 2. 일정 삭제  
 ![일정-삭제](https://user-images.githubusercontent.com/95086878/222508046-61ddaa74-a2bc-45ad-911e-075a21a1d5d7.gif)  
 
