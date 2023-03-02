@@ -11,7 +11,7 @@
 1. 일정 추가  
 
 
-https://user-images.githubusercontent.com/95086878/222512703-37f13c77-aa1a-41f4-889d-d725e7a6831e.mov  
+https://user-images.githubusercontent.com/95086878/222512703-37f13c77-aa1a-41f4-889d-d725e7a6831e.gif  
 
 
 
