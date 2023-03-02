@@ -12,8 +12,8 @@
 
 
 2. 일정 삭제  
-![일정-삭제](https://user-images.githubusercontent.com/95086878/222508046-61ddaa74-a2bc-45ad-911e-075a21a1d5d7.gif)  
+<img src="https://user-images.githubusercontent.com/95086878/222508046-61ddaa74-a2bc-45ad-911e-075a21a1d5d7.gif"  width="200" height="400"/>  
 
 3. IoT 화면 이미지 확인 및 변경  
-![이미지-변경](https://user-images.githubusercontent.com/95086878/222508320-8d2effb8-1c80-43bd-8580-c88dd14264fc.gif)
+<img src="https://user-images.githubusercontent.com/95086878/222508320-8d2effb8-1c80-43bd-8580-c88dd14264fc.gif"  width="200" height="400"/>
 
