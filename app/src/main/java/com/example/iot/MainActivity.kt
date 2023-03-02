@@ -18,7 +18,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 
-const val RC_SIGN_IN: Int = 9001
 
 class MainActivity : AppCompatActivity() {
     private var googleSignInClient: GoogleSignInClient?=null

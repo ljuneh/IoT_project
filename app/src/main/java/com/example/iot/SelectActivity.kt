@@ -14,15 +14,15 @@ import java.util.*
 
 class SelectActivity: AppCompatActivity() {
     private var uid: String? = null
-    var db : FirebaseFirestore? = null
+    private var db : FirebaseFirestore? = null
     private lateinit var datePickerText: TextView
     private lateinit var timePickerText1: TextView
     private lateinit var timePickerText2: TextView
     private lateinit var timePickerText3: TextView
-    lateinit var calendar: Calendar
+    private lateinit var calendar: Calendar
     private lateinit var binding: ActivitySelectBinding
-    lateinit var startDate: String
-    lateinit var endDate: String
+    private lateinit var startDate: String
+    private lateinit var endDate: String
     private var startday: Long? = null
     private var endday: Long? = null
     private var calcudate: Long? = null

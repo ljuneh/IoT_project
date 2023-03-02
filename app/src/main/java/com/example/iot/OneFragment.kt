@@ -1,10 +1,7 @@
 package com.example.iot
 
 import android.content.ContentValues
-import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +15,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.DayViewDecorator
 import com.prolificinteractive.materialcalendarview.DayViewFacade
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import com.prolificinteractive.materialcalendarview.format.ArrayWeekDayFormatter
 import com.prolificinteractive.materialcalendarview.format.MonthArrayTitleFormatter
 import com.prolificinteractive.materialcalendarview.spans.DotSpan
@@ -31,13 +27,13 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class OneFragment : Fragment() {
-    lateinit var binding: Frag1Binding
-    var dates = ArrayList<CalendarDay>()
-    var db : FirebaseFirestore? = null
+    private lateinit var binding: Frag1Binding
+    private var dates = ArrayList<CalendarDay>()
+    private var db : FirebaseFirestore? = null
     private var uid: String? = null
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = Frag1Binding.inflate(inflater, container, false)
 
         db = FirebaseFirestore.getInstance()
@@ -58,10 +54,10 @@ class OneFragment : Fragment() {
                 Log.w(ContentValues.TAG, "Listen failed.", e)
                 return@addSnapshotListener
             }
-            calendarView!!.removeDecorators()
-            calendarView!!.invalidateDecorators()
+            calendarView.removeDecorators()
+            calendarView.invalidateDecorators()
             var i = 0
-            snapshot?.data?.forEach {
+            snapshot?.data?.forEach { it ->
                 val datalist = arrayListOf<CalendarDay>()
                 val reservationdata = it.value
                 reservationdata?.let{
@@ -92,7 +88,6 @@ class OneFragment : Fragment() {
                 }
                 val documentsnapshot = job.await()
                 documentsnapshot?.data?.forEach {
-                    val reservation = it.key
                     val datalist = arrayListOf<CalendarDay>()
                     val reservationdata = it.value
                     reservationdata?.let{
@@ -108,12 +103,12 @@ class OneFragment : Fragment() {
                             if (date == resdate) {
                                 val model = itreslist.value as java.util.HashMap<String,Any>
 
-                                val ismorning = model.get("ismorning")
-                                val morning = model.get("morning")  as Timestamp?
-                                val islunch = model.get("islunch")
-                                val lunch = model.get("lunch") as Timestamp?
-                                val isdinner = model.get("isdinner")
-                                val dinner = model.get("dinner") as Timestamp?
+                                val ismorning = model["ismorning"]
+                                val morning = model["morning"] as Timestamp?
+                                val islunch = model["islunch"]
+                                val lunch = model["lunch"] as Timestamp?
+                                val isdinner = model["isdinner"]
+                                val dinner = model["dinner"] as Timestamp?
 
                                 binding.resDay.text = itreslist.key
                                 when(morning) {
@@ -182,17 +177,7 @@ class OneFragment : Fragment() {
         return binding.root
     } // onCreateView
 
-    fun dotDecorator(calendar: MaterialCalendarView?, db: FirebaseFirestore?, uid: String?) {
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            calendar!!.removeDecorators()
-            calendar!!.invalidateDecorators()
-            // 토, 일 색칠 + 오늘 날짜 표시
-            calendar.addDecorator(EventDecorator(Color.parseColor("#3f51b5"), dates))
-        },0)
-
-
-    }
 
 
 }
@@ -212,7 +197,7 @@ suspend fun getdata(db: FirebaseFirestore?, uid: String?): DocumentSnapshot? {
 }
 
 class EventDecorator(parseColor: Int, dates: ArrayList<CalendarDay>): DayViewDecorator {
-    var dates: HashSet<CalendarDay> = HashSet(dates)
+    private var dates: HashSet<CalendarDay> = HashSet(dates)
     val color: Int = parseColor
 
     override fun shouldDecorate(day: CalendarDay?): Boolean {

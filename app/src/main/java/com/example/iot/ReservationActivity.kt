@@ -37,22 +37,22 @@ class ReservationActivity : AppCompatActivity(), NavigationView.OnNavigationItem
 
     private var backPressedTime : Long = 0
 
-    var db : FirebaseFirestore? = null
+    private var db : FirebaseFirestore? = null
 
     private var uid: String? = null
 
-    var itemdata = arrayListOf<resitem>()
+    private var itemdata = arrayListOf<resitem>()
 
 
 
-    suspend fun getdata() :ArrayList<resitem>{
+    private suspend fun getdata() :ArrayList<resitem>{
         return try{
             val tempdata = arrayListOf<resitem>()
             uid = intent.getStringExtra("Uid")
             db = FirebaseFirestore.getInstance()
             var result = false
 
-            var test = db!!.collection("Res").document(uid!!).get()
+            val test = db!!.collection("Res").document(uid!!).get()
                 .addOnSuccessListener {
                     result = true
                 }.addOnFailureListener {

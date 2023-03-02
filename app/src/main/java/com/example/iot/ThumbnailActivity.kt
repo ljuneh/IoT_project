@@ -21,8 +21,8 @@ import com.google.firebase.storage.FirebaseStorage
 
 class ThumbnailActivity : AppCompatActivity(){
     private var stdb : FirebaseStorage? = null
-    var db : FirebaseFirestore? = null
-    var uriPhoto : Uri? = null
+    private var db : FirebaseFirestore? = null
+    private var uriPhoto : Uri? = null
     private var uid: String? = null
     private lateinit var binding: ActivityThumbnailBinding
     private lateinit var activityLauncher: ActivityResultLauncher<Intent>
@@ -66,7 +66,7 @@ class ThumbnailActivity : AppCompatActivity(){
 
         binding.xmlFrgPrfBtnUpload.setOnClickListener {
             //Open Album
-            var photoPickerIntent = Intent(Intent.ACTION_PICK)
+            val photoPickerIntent = Intent(Intent.ACTION_PICK)
             photoPickerIntent.type = "image/*"
             activityLauncher.launch(photoPickerIntent)
         }
