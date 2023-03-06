@@ -1,10 +1,10 @@
 # IoT_project
 
-사용자 낙상 감지 및 복약보조를 위한 홈 IoT 의 보호자용 모바일 어플리케이션.  
+## 사용자 낙상 감지 및 복약보조를 위한 홈 IoT 의 보호자용 모바일 어플리케이션.  
 
 
 
-다음은 로그인 이후의 어플 기능  
+### 다음은 로그인 이후의 어플 기능  
 
 
 
@@ -20,3 +20,5 @@
 4. IoT 화면 이미지 확인 및 변경  
 <img src="https://user-images.githubusercontent.com/95086878/222508320-8d2effb8-1c80-43bd-8580-c88dd14264fc.gif"  width="200" height="400"/>  
 
+5. 낙상 감지시 알람 생성  
+![알람 생성](https://user-images.githubusercontent.com/95086878/223137771-035e5a31-eca7-4bbe-a606-f2e1d78e4fdd.jpg)
