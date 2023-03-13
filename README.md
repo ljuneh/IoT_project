@@ -22,3 +22,6 @@
 
 5. 낙상 감지시 알람 생성  
 ![알람 생성](https://user-images.githubusercontent.com/95086878/223137771-035e5a31-eca7-4bbe-a606-f2e1d78e4fdd.jpg)
+
+#### Firebase Cloud Functions 은 다음 링크를 참조  
+https://github.com/ljuneh/IoT_functions
